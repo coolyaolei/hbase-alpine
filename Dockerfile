@@ -19,7 +19,7 @@ RUN set -euxo pipefail && \
 
 RUN set -euxo pipefail && \
     apk add --no-cache wget tar && \
-    wget https://mirrors.tuna.tsinghua.edu.cn/apache/hbase//hbase-1.3.1-bin.tar.gz" || \
+    wget https://mirrors.tuna.tsinghua.edu.cn/apache/hbase/$HBASE_VERSION/hbase-$HBASE_VERSION-bin.tar.gz" && \
     mkdir "hbase-$HBASE_VERSION" && \
     tar zxf "hbase-$HBASE_VERSION-bin.tar.gz" -C "hbase-$HBASE_VERSION" --strip 1 && \
     test -d "hbase-$HBASE_VERSION" && \
